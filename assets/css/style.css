@@ -8,7 +8,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Particles Background */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -16,12 +15,11 @@ body {
     z-index: -1;
 }
 
-/* Sticky Header */
 .sticky-header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
@@ -47,7 +45,7 @@ nav ul li a {
     text-decoration: none;
     color: #00ff00;
     font-weight: bold;
-    transition: color 0.3s ease-in-out, transform 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
@@ -58,26 +56,26 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 100px 20px;
+    padding: 150px 20px;
     background: linear-gradient(to bottom, #00ff00, #000);
-    animation: slide-in 2s ease-in-out;
+    animation: fade-in 2s ease-in-out;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     background: -webkit-linear-gradient(#00ff00, #ffd700);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 20px 0;
 }
 
 .hero .cta {
-    display: inline-block;
-    padding: 10px 25px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
     background-color: #00ff00;
     color: #000;
     text-decoration: none;
@@ -88,18 +86,185 @@ nav ul li a:hover {
 
 .hero .cta:hover {
     background-color: #ffd700;
+    transform: scale(1.2);
+}
+
+/* Tokenomics Section */
+.tokenomics {
+    padding: 100px 20px;
+    text-align: center;
+    background: radial-gradient(circle, #00ff00 0%, #000 100%);
+}
+
+.tokenomics h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.tokenomics ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.tokenomics li {
+    font-size: 1.2rem;
+    background: rgba(0, 255, 0, 0.2);
+    padding: 10px 20px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.tokenomics li:hover {
+    transform: scale(1.1);
+    background: rgba(255, 215, 0, 0.2);
+}
+
+/* Roadmap Section */
+.roadmap {
+    padding: 100px 20px;
+    text-align: center;
+    background: #111;
+    color: #fff;
+}
+
+.roadmap h2 {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.roadmap ul {
+    list-style: none;
+    padding: 0;
+}
+
+.roadmap li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(0, 255, 0, 0.1);
+    border-left: 5px solid #00ff00;
+    transition: transform 0.3s;
+}
+
+.roadmap li:hover {
+    transform: scale(1.05);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Equipo Section */
+.equipo {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #000, #00ff00);
+    color: #fff;
+}
+
+.equipo .team-member {
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.equipo .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid #00ff00;
+}
+
+.equipo .team-member h3 {
+    font-size: 1.5rem;
+    color: #ffd700;
+}
+
+.equipo .team-member p {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.equipo .team-member:hover {
     transform: scale(1.1);
 }
 
+/* Footer Section */
+footer {
+    padding: 50px 20px;
+    text-align: center;
+    background: #111;
+    color: #fff;
+}
+
+footer h2 {
+    font-size: 2rem;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+footer form {
+    margin-top: 20px;
+}
+
+footer form input,
+footer form textarea,
+footer form button {
+    width: 80%;
+    max-width: 400px;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background: #000;
+    color: #fff;
+}
+
+footer form button {
+    background: #00ff00;
+    color: #000;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+footer form button:hover {
+    transform: scale(1.1);
+    background: #ffd700;
+}
+
 /* Animations */
-@keyframes slide-in {
+@keyframes fade-in {
     from {
-        transform: translateY(-50px);
         opacity: 0;
+        transform: translateY(-20px);
     }
     to {
-        transform: translateY(0);
         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .tokenomics ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
