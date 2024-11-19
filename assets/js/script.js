@@ -1,234 +1,145 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar animaciones AOS
-    AOS.init({
-        duration: 1500,
-        once: true,
-    });
+// Smooth Scroll for Navigation
+document.querySelectorAll('.navbar ul li').forEach(item => {
+  item.addEventListener('click', event => {
+    const targetId = event.target.textContent.toLowerCase();
+    const targetSection = document.querySelector(`#${targetId}`);
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
 
-    // Renderizar el gráfico de Tokenomics
-    const tokenomicsOptions = {
-        chart: {
-            type: 'donut',
-            height: 350,
-        },
-        series: [5, 5, 5, 85],
-        labels: ['Marketing', 'Reservas para Desarrolladores', 'Crecimiento Futuro', 'Liquidez'],
-        colors: ['#00ff00', '#ffd700', '#ff5733', '#1e90ff'],
-        responsive: [
-            {
-                breakpoint: 768,
-                options: {
-                    chart: {
-                        width: 300,
-                    },
-                    legend: {
-                        position: 'bottom',
-                    },
-                },
-            },
-        ],
-    };
+// Floating Coins Animation
+const floatingCoins = document.querySelectorAll('.coin');
+floatingCoins.forEach((coin, index) => {
+  setInterval(() => {
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    coin.style.transform = `translate(${x}px, ${y}px)`;
+  }, 3000 + index * 1000);
+});
 
-    const tokenomicsChart = new ApexCharts(document.querySelector('#chart'), tokenomicsOptions);
-    tokenomicsChart.render();
+// Background Interaction with Mouse
+document.addEventListener('mousemove', e => {
+  const x = e.clientX / window.innerWidth;
+  const y = e.clientY / window.innerHeight;
+  document.body.style.backgroundPosition = `${x * 50}% ${y * 50}%`;
+});
 
-    // Configuración del fondo de partículas
-    particlesJS('particles-js', {
-        particles: {
-            number: {
-                value: 150,
-                density: {
-                    enable: true,
-                    value_area: 800,
-                },
-            },
-            color: {
-                value: '#00ff00',
-            },
-            shape: {
-                type: 'circle',
-                stroke: {
-                    width: 0,
-                    color: '#000000',
-                },
-            },
-            opacity: {
-                value: 0.5,
-                random: true,
-                anim: {
-                    enable: true,
-                    speed: 1,
-                    opacity_min: 0.1,
-                    sync: false,
-                },
-            },
-            size: {
-                value: 3,
-                random: true,
-                anim: {
-                    enable: true,
-                    speed: 5,
-                    size_min: 0.1,
-                    sync: false,
-                },
-            },
-            line_linked: {
-                enable: true,
-                distance: 150,
-                color: '#00ff00',
-                opacity: 0.4,
-                width: 1,
-            },
-            move: {
-                enable: true,
-                speed: 3,
-                direction: 'none',
-                random: false,
-                straight: false,
-                out_mode: 'out',
-                bounce: false,
-                attract: {
-                    enable: false,
-                    rotateX: 600,
-                    rotateY: 1200,
-                },
-            },
-        },
-        interactivity: {
-            detect_on: 'canvas',
-            events: {
-                onhover: {
-                    enable: true,
-                    mode: 'grab',
-                },
-                onclick: {
-                    enable: true,
-                    mode: 'push',
-                },
-                resize: true,
-            },
-            modes: {
-                grab: {
-                    distance: 200,
-                    line_linked: {
-                        opacity: 1,
-                    },
-                },
-                push: {
-                    particles_nb: 4,
-                },
-            },
-        },
-    });
+// Hero Text Animation
+const heroText = document.querySelector('.hero h1');
+let heroIndex = 0;
+const heroMessages = [
+  "¡Únete al BullRun!",
+  "La Fuerza del Mercado Alcista",
+  "Tokenomics de BullRun"
+];
+setInterval(() => {
+  heroIndex = (heroIndex + 1) % heroMessages.length;
+  heroText.textContent = heroMessages[heroIndex];
+}, 4000);
 
-    // Navegación suave entre secciones
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach((link) => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = document.querySelector(link.getAttribute('href'));
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-            });
-        });
-    });
+// Tokenomics Interactive Chart
+const chartSegments = document.querySelectorAll('.chart .segment');
+chartSegments.forEach(segment => {
+  segment.addEventListener('mouseenter', () => {
+    segment.style.transform = 'scale(1.1)';
+    segment.style.filter = 'brightness(1.5)';
+  });
+  segment.addEventListener('mouseleave', () => {
+    segment.style.transform = 'scale(1)';
+    segment.style.filter = 'brightness(1)';
+  });
+});
 
-    // FAQ Interactivo
-    const faqItems = document.querySelectorAll('.faq-item h3');
-    faqItems.forEach((item) => {
-        item.addEventListener('click', () => {
-            const content = item.nextElementSibling;
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        });
-    });
+// Scroll Animation for Roadmap
+const milestones = document.querySelectorAll('.roadmap .milestone');
+window.addEventListener('scroll', () => {
+  milestones.forEach(milestone => {
+    const rect = milestone.getBoundingClientRect();
+    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+      milestone.classList.add('active');
+    } else {
+      milestone.classList.remove('active');
+    }
+  });
+});
 
-    // Animaciones en los artículos del blog
-    const blogArticles = document.querySelectorAll('.blog article');
-    blogArticles.forEach((article) => {
-        article.addEventListener('mouseover', () => {
-            article.style.transform = 'scale(1.05)';
-            article.style.boxShadow = '0px 8px 20px rgba(0, 255, 0, 0.6)';
-            article.style.transition = 'transform 0.3s, box-shadow 0.3s';
-        });
+// Scroll Reveal Effect
+const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+const revealOnScroll = () => {
+  scrollRevealElements.forEach(element => {
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      element.classList.add('visible');
+    } else {
+      element.classList.remove('visible');
+    }
+  });
+};
+window.addEventListener('scroll', revealOnScroll);
 
-        article.addEventListener('mouseout', () => {
-            article.style.transform = 'scale(1)';
-            article.style.boxShadow = 'none';
-        });
-    });
+// Dynamic Button Effects
+const buttons = document.querySelectorAll('.cta-btn, .navbar ul li');
+buttons.forEach(button => {
+  button.addEventListener('mouseover', () => {
+    button.style.transform = 'scale(1.2)';
+    button.style.boxShadow = '0 10px 20px rgba(41, 167, 69, 0.4)';
+  });
+  button.addEventListener('mouseout', () => {
+    button.style.transform = 'scale(1)';
+    button.style.boxShadow = 'none';
+  });
+});
 
-    // Formulario de contacto funcional
-    const contactForm = document.querySelector('#contact-form');
-    contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
-        contactForm.reset();
-    });
+// Background Particles Animation
+const particlesContainer = document.createElement('div');
+particlesContainer.classList.add('particles-container');
+document.body.appendChild(particlesContainer);
 
-    // Contador de tokens vendidos (simulación)
-    let counterElement = document.createElement('div');
-    counterElement.id = 'counter';
-    counterElement.style.position = 'fixed';
-    counterElement.style.bottom = '20px';
-    counterElement.style.right = '20px';
-    counterElement.style.padding = '10px 20px';
-    counterElement.style.backgroundColor = '#00ff00';
-    counterElement.style.color = '#000';
-    counterElement.style.borderRadius = '5px';
-    counterElement.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0.5)';
-    counterElement.style.zIndex = '1000';
-    counterElement.innerHTML = '<strong>Tokens Vendidos:</strong> <span id="token-count">0</span>';
-    document.body.appendChild(counterElement);
+for (let i = 0; i < 50; i++) {
+  const particle = document.createElement('div');
+  particle.classList.add('particle');
+  particlesContainer.appendChild(particle);
+}
 
-    let tokenCount = 0;
-    setInterval(() => {
-        tokenCount += Math.floor(Math.random() * 10) + 1; // Simulación de tokens vendidos
-        document.getElementById('token-count').textContent = tokenCount;
-    }, 2000);
+const particles = document.querySelectorAll('.particle');
+particles.forEach(particle => {
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight;
+  const size = Math.random() * 10 + 5;
+  const duration = Math.random() * 5 + 3;
 
-    // Animación interactiva en el equipo
-    const teamMembers = document.querySelectorAll('.team-member');
-    teamMembers.forEach((member) => {
-        member.addEventListener('mouseover', () => {
-            member.style.transform = 'rotateY(360deg)';
-            member.style.transition = 'transform 0.5s ease-in-out';
-        });
+  particle.style.width = `${size}px`;
+  particle.style.height = `${size}px`;
+  particle.style.left = `${x}px`;
+  particle.style.top = `${y}px`;
+  particle.style.animationDuration = `${duration}s`;
+});
 
-        member.addEventListener('mouseout', () => {
-            member.style.transform = 'rotateY(0)';
-        });
-    });
+// Interactive Navigation Bar Change on Scroll
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.style.backgroundColor = '#1c1f26';
+    navbar.style.boxShadow = '0 5px 10px rgba(0, 0, 0, 0.5)';
+  } else {
+    navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
+    navbar.style.boxShadow = 'none';
+  }
+});
 
-    // Botón de regreso al inicio
-    let backToTopButton = document.createElement('button');
-    backToTopButton.textContent = '⬆️';
-    backToTopButton.style.position = 'fixed';
-    backToTopButton.style.bottom = '20px';
-    backToTopButton.style.left = '20px';
-    backToTopButton.style.padding = '10px 15px';
-    backToTopButton.style.backgroundColor = '#00ff00';
-    backToTopButton.style.color = '#000';
-    backToTopButton.style.border = 'none';
-    backToTopButton.style.borderRadius = '50%';
-    backToTopButton.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0.5)';
-    backToTopButton.style.cursor = 'pointer';
-    backToTopButton.style.display = 'none';
-    backToTopButton.style.zIndex = '1000';
-    document.body.appendChild(backToTopButton);
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
-        }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
-    });
+// Glow Effect on Images
+const images = document.querySelectorAll('img');
+images.forEach(image => {
+  image.addEventListener('mouseover', () => {
+    image.style.filter = 'brightness(1.3)';
+    image.style.transition = 'filter 0.3s';
+  });
+  image.addEventListener('mouseout', () => {
+    image.style.filter = 'brightness(1)';
+  });
 });
