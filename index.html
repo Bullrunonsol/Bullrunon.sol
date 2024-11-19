@@ -1,84 +1,30 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BullRun - La Revolución de las Memecoins</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <title>BullRun - Token Revolution</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Fondo de partículas -->
-    <div id="particles-js"></div>
+    <!-- Contenedor del Logo -->
+    <div class="logo-container">
+        <img src="ruta/a/tu/logo.png" alt="BullRun Logo" class="logo">
+    </div>
 
-    <!-- Encabezado -->
-    <header class="sticky-header" data-aos="fade-down">
-        <div class="logo">
-            <img src="assets/images/logo.png" alt="BullRun Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#tokenomics">Tokenomics</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
-                <li><a href="#vision">Visión</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Lluvia de monedas -->
+    <div class="coin-rain"></div>
 
-    <!-- Sección Hero -->
-    <section id="inicio" class="hero" data-aos="fade-up">
-        <h1>¡Bienvenido a BullRun!</h1>
-        <p>La revolución de las memecoins en la red Solana. Únete al futuro del mercado con BullRun, inspirado en el poder del próximo Bull Run.</p>
-        <a href="#tokenomics" class="cta">Explora Más</a>
-    </section>
+    <!-- Sección principal -->
+    <div class="main-content">
+        <h1>Bienvenido a BullRun</h1>
+        <p>El próximo paso en la revolución de las memecoins.</p>
+    </div>
 
-    <!-- Sección Tokenomics -->
-    <section id="tokenomics" class="tokenomics" data-aos="zoom-in">
-        <h2>Tokenomics</h2>
-        <div id="chart"></div>
-        <ul>
-            <li><strong>5%</strong> Marketing</li>
-            <li><strong>5%</strong> Reservas para Desarrolladores</li>
-            <li><strong>5%</strong> Crecimiento Futuro</li>
-            <li><strong>85%</strong> Liquidez</li>
-        </ul>
-    </section>
-
-    <!-- Sección Roadmap -->
-    <section id="roadmap" class="roadmap" data-aos="fade-left">
-        <h2>Roadmap</h2>
-        <ul>
-            <li><strong>Q4 2024:</strong> Lanzamiento del Token y Crecimiento de la Comunidad</li>
-            <li><strong>Q1 2025:</strong> Campaña de Marketing Estratégico</li>
-            <li><strong>Q2 2025:</strong> Alianzas con Proyectos Clave</li>
-            <li><strong>Q3 2025:</strong> Funcionalidad de Staking y Recompensas</li>
-        </ul>
-    </section>
-
-    <!-- Sección Visión -->
-    <section id="vision" class="vision" data-aos="fade-right">
-        <h2>Visión</h2>
-        <p>
-            En BullRun, comprendemos el impacto del mercado alcista en las criptomonedas. Nuestra visión se centra en liderar la próxima revolución de las memecoins,
-            tomando inspiración del crecimiento exponencial de Ethereum y el poder de la comunidad cripto.
-        </p>
-        <p>
-            Nuestro proyecto está diseñado para ofrecer transparencia, innovación, y una comunidad comprometida. BullRun no es solo una memecoin, es un símbolo de
-            fortaleza y crecimiento. ¡Sé parte de nuestra historia y vive la fuerza del toro!
-        </p>
-    </section>
+    <!-- Contenedor de velas chinas -->
+    <div class="candlestick-container"></div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script>
-        particlesJS.load('particles-js', 'assets/js/particles.json', function() {
-            console.log('Particles.js loaded!');
-        });
-        AOS.init();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
