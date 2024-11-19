@@ -1,86 +1,56 @@
-/* General Styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #fff;
-    background-color: #121212;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #1a1a1a;
 }
 
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #000;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: black;
 }
 
-nav .logo img {
-    height: 50px;
+.navbar .logo {
+  height: 50px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+.navbar nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.buy-now {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    background-color: #28a745;
-    border-radius: 5px;
-}
-
-/* Hero Section */
 #hero {
-    background: linear-gradient(180deg, #28a745, #121212);
-    text-align: center;
-    padding: 5rem 1rem;
+  text-align: center;
+  padding: 50px;
+  background-color: #008000;
 }
 
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+#how-to-buy .steps {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-#hero .btn {
-    padding: 0.5rem 1rem;
-    background-color: #000;
-    color: #28a745;
-    border: 1px solid #28a745;
-    margin: 0.5rem;
-    text-decoration: none;
+#how-to-buy .step {
+  width: 30%;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
 }
 
-/* About Section */
-#about {
-    padding: 2rem 1rem;
-    background-color: #1b1b1b;
-    text-align: center;
+#tokenomics {
+  text-align: center;
+  padding: 50px;
 }
 
-/* How to Buy Section */
-#how-to-buy {
-    padding: 2rem 1rem;
-    background-color: #121212;
+#roadmap ul {
+  list-style-type: none;
+  text-align: center;
 }
 
-.buy-steps {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-}
-
-.buy-steps .step {
-    background: #1b1b1b;
-    padding: 1rem;
-    border-radius: 5px;
-    width: 25%;
+#roadmap li {
+  margin: 10px 0;
 }
