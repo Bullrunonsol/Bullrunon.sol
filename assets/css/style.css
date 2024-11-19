@@ -126,6 +126,12 @@ nav ul li a:hover {
     background: rgba(255, 215, 0, 0.2);
 }
 
+.tokenomics .note {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #aaa;
+}
+
 /* Roadmap Section */
 .roadmap {
     padding: 100px 20px;
@@ -167,9 +173,15 @@ nav ul li a:hover {
     color: #fff;
 }
 
+.equipo .team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .equipo .team-member {
     margin: 20px;
-    display: inline-block;
     text-align: center;
     transition: transform 0.3s;
 }
@@ -180,6 +192,11 @@ nav ul li a:hover {
     border-radius: 50%;
     margin-bottom: 10px;
     border: 3px solid #00ff00;
+    transition: border-color 0.3s;
+}
+
+.equipo .team-member:hover img {
+    border-color: #ffd700;
 }
 
 .equipo .team-member h3 {
@@ -192,8 +209,65 @@ nav ul li a:hover {
     color: #fff;
 }
 
-.equipo .team-member:hover {
-    transform: scale(1.1);
+/* Blog Section */
+.blog {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #111, #000);
+}
+
+.blog h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.blog article {
+    background: #222;
+    padding: 15px;
+    border: 1px solid #00ff00;
+    border-radius: 10px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.blog article:hover {
+    transform: scale(1.05);
+    background: #333;
+}
+
+.blog article img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.blog article h3 {
+    font-size: 1.5rem;
+    color: #ffd700;
+}
+
+.blog article p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.blog article a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #00ff00;
+    transition: color 0.3s;
+}
+
+.blog article a:hover {
+    color: #ffd700;
 }
 
 /* Footer Section */
@@ -267,5 +341,3 @@ footer form button:hover {
         gap: 10px;
     }
 }
-
-
