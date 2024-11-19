@@ -1,57 +1,22 @@
-/* General styles */
+/* Base styles */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #0d1117;
-  color: #fff;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #000000, #1a1a1a);
+    color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
-/* Navbar styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #1a202c;
+header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-.navbar .logo {
-  height: 50px;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.navbar ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Hero section */
-.hero {
-  text-align: center;
-  background-image: url('../images/hero_background.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 5rem 1rem;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  color: #d1d5db;
-}
-
-/* Footer styles */
-footer {
-  background: #1a202c;
-  padding: 1rem;
-  text-align: center;
-}
+/* Add more styling for sections, buttons, and animations */
