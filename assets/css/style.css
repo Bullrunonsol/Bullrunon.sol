@@ -11,12 +11,18 @@ body {
     height: 100%;
     z-index: -1;
 }
+.sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
 }
 header .logo img {
     max-height: 50px;
@@ -29,18 +35,22 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: #00ff00;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 nav ul li a:hover {
     color: #ffd700;
+    transform: scale(1.1);
 }
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background: url('../images/hero_background.jpg') no-repeat center center/cover;
+    background: linear-gradient(to bottom, #00ff00, #000);
 }
 .hero h1 {
     font-size: 3rem;
+    background: -webkit-linear-gradient(#00ff00, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .hero p {
     font-size: 1.2rem;
@@ -54,8 +64,10 @@ nav ul li a:hover {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 .hero .cta:hover {
     background-color: #ffd700;
+    transform: scale(1.1);
 }
+
