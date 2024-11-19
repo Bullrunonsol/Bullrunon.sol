@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar AOS (Animate on Scroll)
+    // Inicializar animaciones AOS
     AOS.init({
         duration: 1500,
         once: true,
     });
 
     // Renderizar el gráfico de Tokenomics
-    var tokenomicsOptions = {
+    const tokenomicsOptions = {
         chart: {
             type: 'donut',
             height: 350,
@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
     };
 
-    var tokenomicsChart = new ApexCharts(document.querySelector('#chart'), tokenomicsOptions);
+    const tokenomicsChart = new ApexCharts(document.querySelector('#chart'), tokenomicsOptions);
     tokenomicsChart.render();
 
-    // Partículas en el fondo
+    // Configuración del fondo de partículas
     particlesJS('particles-js', {
         particles: {
             number: {
-                value: 100,
+                value: 150,
                 density: {
                     enable: true,
                     value_area: 800,
@@ -54,16 +54,22 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             opacity: {
                 value: 0.5,
-                random: false,
+                random: true,
                 anim: {
-                    enable: false,
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false,
                 },
             },
             size: {
                 value: 3,
                 random: true,
                 anim: {
-                    enable: false,
+                    enable: true,
+                    speed: 5,
+                    size_min: 0.1,
+                    sync: false,
                 },
             },
             line_linked: {
@@ -75,11 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             move: {
                 enable: true,
-                speed: 2,
+                speed: 3,
                 direction: 'none',
                 random: false,
                 straight: false,
                 out_mode: 'out',
+                bounce: false,
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200,
+                },
             },
         },
         interactivity: {
@@ -87,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             events: {
                 onhover: {
                     enable: true,
-                    mode: 'repulse',
+                    mode: 'grab',
                 },
                 onclick: {
                     enable: true,
@@ -96,9 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 resize: true,
             },
             modes: {
-                repulse: {
-                    distance: 100,
-                    duration: 0.4,
+                grab: {
+                    distance: 200,
+                    line_linked: {
+                        opacity: 1,
+                    },
                 },
                 push: {
                     particles_nb: 4,
@@ -107,37 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    // FAQ Interactivo
-    const faqItems = document.querySelectorAll('.faq-item h3');
-    faqItems.forEach((item) => {
-        item.addEventListener('click', () => {
-            const content = item.nextElementSibling;
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        });
-    });
-
-    // Animaciones de Testimonios
-    const testimonials = document.querySelectorAll('.testimonial');
-    testimonials.forEach((testimonial) => {
-        testimonial.addEventListener('mouseover', () => {
-            testimonial.style.transform = 'scale(1.1)';
-            testimonial.style.transition = 'transform 0.3s';
-        });
-
-        testimonial.addEventListener('mouseout', () => {
-            testimonial.style.transform = 'scale(1)';
-        });
-    });
-
-    // Formulario de Contacto
-    const contactForm = document.querySelector('#contact-form');
-    contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
-        contactForm.reset();
-    });
-
-    // Navegación suave
+    // Navegación suave entre secciones
     const navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach((link) => {
         link.addEventListener('click', (e) => {
@@ -150,22 +134,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Blog Animado
-    const blogArticles = document.querySelectorAll('.blog article');
-    blogArticles.forEach((article) => {
-        article.addEventListener('mouseover', () => {
-            article.style.boxShadow = '0px 4px 15px rgba(0, 255, 0, 0.7)';
-            article.style.transform = 'scale(1.05)';
-            article.style.transition = 'all 0.3s';
-        });
-
-        article.addEventListener('mouseout', () => {
-            article.style.boxShadow = 'none';
-            article.style.transform = 'scale(1)';
+    // FAQ Interactivo
+    const faqItems = document.querySelectorAll('.faq-item h3');
+    faqItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            const content = item.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
         });
     });
 
-    // Contador dinámico (Simulación de tokens vendidos)
+    // Animaciones en los artículos del blog
+    const blogArticles = document.querySelectorAll('.blog article');
+    blogArticles.forEach((article) => {
+        article.addEventListener('mouseover', () => {
+            article.style.transform = 'scale(1.05)';
+            article.style.boxShadow = '0px 8px 20px rgba(0, 255, 0, 0.6)';
+            article.style.transition = 'transform 0.3s, box-shadow 0.3s';
+        });
+
+        article.addEventListener('mouseout', () => {
+            article.style.transform = 'scale(1)';
+            article.style.boxShadow = 'none';
+        });
+    });
+
+    // Formulario de contacto funcional
+    const contactForm = document.querySelector('#contact-form');
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+        contactForm.reset();
+    });
+
+    // Contador de tokens vendidos (simulación)
     let counterElement = document.createElement('div');
     counterElement.id = 'counter';
     counterElement.style.position = 'fixed';
@@ -186,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('token-count').textContent = tokenCount;
     }, 2000);
 
-    // Animaciones para la sección del equipo
+    // Animación interactiva en el equipo
     const teamMembers = document.querySelectorAll('.team-member');
     teamMembers.forEach((member) => {
         member.addEventListener('mouseover', () => {
@@ -196,6 +197,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
         member.addEventListener('mouseout', () => {
             member.style.transform = 'rotateY(0)';
+        });
+    });
+
+    // Botón de regreso al inicio
+    let backToTopButton = document.createElement('button');
+    backToTopButton.textContent = '⬆️';
+    backToTopButton.style.position = 'fixed';
+    backToTopButton.style.bottom = '20px';
+    backToTopButton.style.left = '20px';
+    backToTopButton.style.padding = '10px 15px';
+    backToTopButton.style.backgroundColor = '#00ff00';
+    backToTopButton.style.color = '#000';
+    backToTopButton.style.border = 'none';
+    backToTopButton.style.borderRadius = '50%';
+    backToTopButton.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0.5)';
+    backToTopButton.style.cursor = 'pointer';
+    backToTopButton.style.display = 'none';
+    backToTopButton.style.zIndex = '1000';
+    document.body.appendChild(backToTopButton);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
         });
     });
 });
