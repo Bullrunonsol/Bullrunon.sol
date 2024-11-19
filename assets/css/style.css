@@ -1,10 +1,10 @@
-/* General Styles */
+/* Estilos Globales */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     color: #fff;
-    background-color: #000;
+    background: linear-gradient(to bottom, #000, #001a00);
     overflow-x: hidden;
 }
 
@@ -15,37 +15,45 @@ body {
     z-index: -1;
 }
 
+/* Header Fijo */
 .sticky-header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 20px 40px;
 }
 
 header .logo img {
-    max-height: 50px;
+    max-height: 60px;
+    transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+    transform: scale(1.1);
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #00ff00;
     font-weight: bold;
-    transition: color 0.3s, transform 0.3s;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -56,32 +64,34 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 150px 20px;
+    padding: 200px 20px;
     background: linear-gradient(to bottom, #00ff00, #000);
-    animation: fade-in 2s ease-in-out;
+    animation: gradient-hero 3s ease infinite;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     background: -webkit-linear-gradient(#00ff00, #ffd700);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: text-fade 2s ease-in-out;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin: 20px 0;
+    font-size: 1.8rem;
+    margin: 25px 0;
+    opacity: 0.9;
 }
 
 .hero .cta {
     padding: 15px 30px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     background-color: #00ff00;
     color: #000;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .hero .cta:hover {
@@ -89,203 +99,121 @@ nav ul li a:hover {
     transform: scale(1.2);
 }
 
-/* Tokenomics Section */
+/* Tokenomics */
 .tokenomics {
-    padding: 100px 20px;
+    padding: 120px 20px;
     text-align: center;
-    background: radial-gradient(circle, #00ff00 0%, #000 100%);
+    background: radial-gradient(circle, #001a00 0%, #000 100%);
+    color: #fff;
 }
 
 .tokenomics h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
     color: #ffd700;
+    margin-bottom: 30px;
+    text-shadow: 0px 4px 6px rgba(255, 215, 0, 0.5);
+}
+
+.tokenomics #chart {
+    margin: 20px auto;
+    max-width: 600px;
 }
 
 .tokenomics ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
 .tokenomics li {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     background: rgba(0, 255, 0, 0.2);
-    padding: 10px 20px;
+    padding: 15px 25px;
     border: 1px solid #00ff00;
-    border-radius: 5px;
-    transition: transform 0.3s;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
 .tokenomics li:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     background: rgba(255, 215, 0, 0.2);
 }
 
-.tokenomics .note {
-    margin-top: 20px;
-    font-size: 1rem;
-    color: #aaa;
-}
-
-/* Roadmap Section */
-.roadmap {
-    padding: 100px 20px;
-    text-align: center;
-    background: #111;
-    color: #fff;
-}
-
-.roadmap h2 {
-    font-size: 2.5rem;
-    color: #ffd700;
-    margin-bottom: 20px;
-}
-
-.roadmap ul {
-    list-style: none;
-    padding: 0;
-}
-
-.roadmap li {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    padding: 10px;
-    background: rgba(0, 255, 0, 0.1);
-    border-left: 5px solid #00ff00;
-    transition: transform 0.3s;
-}
-
-.roadmap li:hover {
-    transform: scale(1.05);
-    background: rgba(255, 215, 0, 0.1);
-}
-
-/* Equipo Section */
-.equipo {
-    padding: 100px 20px;
-    text-align: center;
-    background: linear-gradient(to bottom, #000, #00ff00);
-    color: #fff;
-}
-
-.equipo .team-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.equipo .team-member {
-    margin: 20px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.equipo .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    border: 3px solid #00ff00;
-    transition: border-color 0.3s;
-}
-
-.equipo .team-member:hover img {
-    border-color: #ffd700;
-}
-
-.equipo .team-member h3 {
-    font-size: 1.5rem;
-    color: #ffd700;
-}
-
-.equipo .team-member p {
-    font-size: 1rem;
-    color: #fff;
-}
-
-/* Blog Section */
+/* Blog */
 .blog {
     padding: 100px 20px;
     text-align: center;
-    background: linear-gradient(to bottom, #111, #000);
+    background: #000;
+    color: #fff;
 }
 
 .blog h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
     color: #ffd700;
+    margin-bottom: 30px;
 }
 
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .blog article {
     background: #222;
-    padding: 15px;
-    border: 1px solid #00ff00;
+    padding: 20px;
+    border: 2px solid #00ff00;
     border-radius: 10px;
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blog article:hover {
     transform: scale(1.05);
-    background: #333;
+    box-shadow: 0px 8px 15px rgba(0, 255, 0, 0.6);
 }
 
 .blog article img {
     width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-.blog article h3 {
-    font-size: 1.5rem;
-    color: #ffd700;
-}
-
-.blog article p {
-    font-size: 1rem;
-    color: #ddd;
-}
-
-.blog article a {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 1rem;
-    text-decoration: none;
-    color: #00ff00;
-    transition: color 0.3s;
-}
-
-.blog article a:hover {
-    color: #ffd700;
-}
-
-/* Footer Section */
-footer {
-    padding: 50px 20px;
-    text-align: center;
+/* Preguntas Frecuentes */
+.faq {
+    padding: 100px 20px;
     background: #111;
     color: #fff;
 }
 
-footer h2 {
-    font-size: 2rem;
+.faq h2 {
+    font-size: 2.5rem;
     color: #ffd700;
     margin-bottom: 20px;
 }
 
-footer form {
-    margin-top: 20px;
+.faq-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: scale(1.05);
+    background: #222;
+}
+
+/* Footer */
+footer {
+    padding: 50px 20px;
+    background: #000;
+    text-align: center;
+    color: #fff;
 }
 
 footer form input,
@@ -294,50 +222,55 @@ footer form button {
     width: 80%;
     max-width: 400px;
     margin: 10px 0;
-    padding: 10px;
-    font-size: 1rem;
+    padding: 15px;
+    font-size: 1.2rem;
     border: 1px solid #00ff00;
-    border-radius: 5px;
-    background: #000;
+    border-radius: 8px;
+    background: #111;
     color: #fff;
-}
-
-footer form button {
-    background: #00ff00;
-    color: #000;
-    transition: transform 0.3s, background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 footer form button:hover {
+    background: #00ff00;
+    color: #000;
     transform: scale(1.1);
-    background: #ffd700;
 }
 
 /* Animations */
-@keyframes fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
+@keyframes text-fade {
+    0%, 100% {
+        opacity: 0.8;
     }
-    to {
+    50% {
         opacity: 1;
-        transform: translateY(0);
+    }
+}
+
+@keyframes gradient-hero {
+    0% {
+        background: linear-gradient(to bottom, #00ff00, #000);
+    }
+    50% {
+        background: linear-gradient(to bottom, #001a00, #000);
+    }
+    100% {
+        background: linear-gradient(to bottom, #00ff00, #000);
     }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .tokenomics ul {
-        flex-direction: column;
-        gap: 20px;
+        font-size: 3rem;
     }
 
     nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
+    }
+
+    .blog article {
+        padding: 15px;
     }
 }
