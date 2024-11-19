@@ -3,83 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$BullRun</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$BullRun | Official Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <nav>
-            <img src="assets/logo.jfif" alt="$BullRun Logo" class="logo">
-            <ul>
+            <div class="logo-container">
+                <img src="assets/logo.jfif" alt="$BullRun Logo" class="logo">
+            </div>
+            <ul class="menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#how-to-buy">How to Buy</a></li>
                 <li><a href="#tokenomics">Tokenomics</a></li>
                 <li><a href="#roadmap">Roadmap</a></li>
             </ul>
-            <a href="#" class="btn">Buy Now</a>
+            <a href="#" class="btn buy-now">Buy Now</a>
         </nav>
     </header>
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <h1>Welcome to $BullRun</h1>
-                <p>The memecoin leading the charge in the next crypto bull market.</p>
-                <div class="socials">
-                    <img src="assets/twitter.png" alt="Twitter">
-                    <img src="assets/telegram.png" alt="Telegram">
-                    <img src="assets/coinmarketcap.png" alt="CoinMarketCap">
-                </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-text">
+            <h1>Welcome to $BullRun</h1>
+            <p>The memecoin leading the charge in the next crypto bull market.</p>
+            <div class="social-icons">
+                <img src="assets/twitter.png" alt="Twitter">
+                <img src="assets/telegram.png" alt="Telegram">
+                <img src="assets/coinmarketcap.png" alt="CoinMarketCap">
             </div>
-            <img src="assets/hero-image.webp" alt="Hero Image" class="hero-image">
-        </section>
-        <section id="about">
-            <h2>About</h2>
-            <p>
-                $BullRun is the ultimate symbol of strength, resilience, and determination in the crypto market...
-            </p>
-        </section>
-        <section id="how-to-buy">
-            <h2>How to Buy</h2>
-            <div class="buy-steps">
-                <div class="step">
-                    <h3>Create a Wallet</h3>
-                    <p>Download Phantom or another Solana-compatible wallet from your app store or browser.</p>
-                </div>
-                <div class="step">
-                    <h3>Get Some SOL</h3>
-                    <p>Fund your wallet with Solana (SOL) to swap for $BullRun tokens.</p>
-                </div>
-                <div class="step">
-                    <h3>Go to DexCleaner or GMGN Swap</h3>
-                    <p>Connect your wallet to a decentralized exchange and search for $BullRun.</p>
-                </div>
-                <div class="step">
-                    <h3>Swap SOL for $BullRun</h3>
-                    <p>Complete the transaction to join the $BullRun revolution!</p>
-                </div>
+        </div>
+        <div class="hero-image">
+            <img src="assets/hero-image.webp" alt="Hero BullRun">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About</h2>
+        <p>
+            $BullRun is the ultimate symbol of strength, resilience, and determination in the crypto market. Designed to empower the community...
+        </p>
+    </section>
+
+    <!-- How to Buy Section -->
+    <section id="how-to-buy">
+        <h2>How to Buy</h2>
+        <div class="buy-container">
+            <div class="buy-box">
+                <h3>Create a Wallet</h3>
+                <p>Download Phantom or another Solana-compatible wallet from your app store or browser.</p>
             </div>
-        </section>
-        <section id="tokenomics">
-            <h2>Tokenomics</h2>
+            <div class="buy-box">
+                <h3>Get Some SOL</h3>
+                <p>Fund your wallet with Solana (SOL) to swap for $BullRun tokens.</p>
+            </div>
+            <div class="buy-box">
+                <h3>Go to DexCleaner</h3>
+                <p>Connect your wallet to a decentralized exchange and search for $BullRun.</p>
+            </div>
+            <div class="buy-box">
+                <h3>Swap SOL for $BullRun</h3>
+                <p>Complete the transaction to join the $BullRun revolution!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics">
+        <h2>Tokenomics</h2>
+        <div class="tokenomics-content">
             <div class="token-info">
                 <p class="supply">Token Supply: 1,000,000,000</p>
                 <p>No Taxes. 100% of liquidity locked for community growth.</p>
             </div>
-            <div class="token-graphic">
+            <div class="token-chart">
                 <img src="assets/token-chart.png" alt="Tokenomics Chart">
             </div>
-        </section>
-        <section id="roadmap">
-            <h2>Roadmap</h2>
-            <ul>
-                <li><strong>Phase 1:</strong> Launch marketing campaigns...</li>
-                <li><strong>Phase 2:</strong> Get $BullRun listed...</li>
-                <li><strong>Phase 3:</strong> Expand adoption through...</li>
-            </ul>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap">
+        <h2>Roadmap</h2>
+        <div class="roadmap-container">
+            <div class="roadmap-item"><strong>Phase 1:</strong> Launch marketing campaigns.</div>
+            <div class="roadmap-item"><strong>Phase 2:</strong> Get $BullRun listed on major exchanges.</div>
+            <div class="roadmap-item"><strong>Phase 3:</strong> Expand adoption through utility integrations.</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>© 2024 $BullRun. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Twitter</a>
+            <a href="#">Telegram</a>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
