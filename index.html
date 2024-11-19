@@ -1,86 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SBullRun</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SBullRun</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="assets/images/logo.png" alt="SBullRun Logo">
-            </div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#how-to-buy">How to Buy</a></li>
-                <li><a href="#tokenomics">Tokenomics</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
-            </ul>
-            <a href="#buy" class="buy-now">Buy Now</a>
-        </nav>
-    </header>
+  <header>
+    <div class="navbar">
+      <img src="assets/images/logo.png" alt="SBullRun Logo" class="logo">
+      <nav>
+        <a href="#about">About</a>
+        <a href="#how-to-buy">How to Buy</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#buy-now" class="btn">Buy Now</a>
+      </nav>
+    </div>
+  </header>
 
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Welcome to $BullRun</h1>
-            <p>The memecoin leading the charge in the next crypto bull market.</p>
-            <div class="buttons">
-                <a href="#" class="btn">Twitter</a>
-                <a href="#" class="btn">Telegram</a>
-                <a href="#" class="btn">CoinMarketCap</a>
-            </div>
-            <img src="assets/images/hero_background.jpg" alt="Hero Image">
-        </div>
-    </section>
+  <section id="hero">
+    <h1>Welcome to $BullRun</h1>
+    <p>The memecoin leading the charge in the next crypto bull market.</p>
+    <div class="buttons">
+      <button>Twitter</button>
+      <button>Telegram</button>
+      <button>CoinMarketCap</button>
+    </div>
+  </section>
 
-    <section id="about">
-        <h2>About</h2>
-        <p>$BullRun is a memecoin designed to empower the community and decentralize wealth. 
-           With no presales, zero taxes, and 100% community ownership, $BullRun is here to dominate the crypto space.</p>
-    </section>
+  <section id="about">
+    <h2>About</h2>
+    <p>$BullRun is a memecoin designed to empower the community and decentralize wealth.</p>
+  </section>
 
-    <section id="how-to-buy">
-        <h2>How to Buy</h2>
-        <div class="buy-steps">
-            <div class="step">
-                <h3>Create a Wallet</h3>
-                <p>Download a compatible wallet like Phantom.</p>
-            </div>
-            <div class="step">
-                <h3>Get Some SOL</h3>
-                <p>Fund your wallet with Solana (SOL).</p>
-            </div>
-            <div class="step">
-                <h3>Go to Exchange</h3>
-                <p>Search for $BullRun and swap SOL.</p>
-            </div>
-        </div>
-    </section>
+  <section id="how-to-buy">
+    <h2>How to Buy</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Create a Wallet</h3>
+        <p>Download Phantom or another Solana-compatible wallet.</p>
+      </div>
+      <div class="step">
+        <h3>Get Some SOL</h3>
+        <p>Fund your wallet with Solana (SOL).</p>
+      </div>
+      <div class="step">
+        <h3>Go to DexCleaner</h3>
+        <p>Search for $BullRun and swap SOL.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="tokenomics">
-        <h2>Tokenomics</h2>
-        <p><strong>Total Supply:</strong> 1,000,000,000</p>
-        <p>100% of liquidity locked for community growth.</p>
-        <img src="assets/images/tokenomics_chart.jpg" alt="Tokenomics Chart">
-    </section>
+  <section id="tokenomics">
+    <h2>Tokenomics</h2>
+    <p>Total Supply: 1,000,000,000</p>
+    <canvas id="tokenomicsChart"></canvas>
+  </section>
 
-    <section id="roadmap">
-        <h2>Roadmap</h2>
-        <ul>
-            <li>Phase 1: Launch marketing campaigns.</li>
-            <li>Phase 2: Get listed on major exchanges.</li>
-            <li>Phase 3: Expand adoption globally.</li>
-        </ul>
-    </section>
+  <section id="roadmap">
+    <h2>Roadmap</h2>
+    <ul>
+      <li>Phase 1: Launch marketing campaigns.</li>
+      <li>Phase 2: Get listed on major exchanges.</li>
+      <li>Phase 3: Expand adoption globally.</li>
+    </ul>
+  </section>
 
-    <footer>
-        <p>&copy; 2024 $BullRun. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#">Twitter</a>
-            <a href="#">Telegram</a>
-        </div>
-    </footer>
+  <footer>
+    <p>&copy; 2024 SBullRun. All rights reserved.</p>
+    <a href="#">Twitter</a>
+    <a href="#">Telegram</a>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
