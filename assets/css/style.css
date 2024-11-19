@@ -1,138 +1,176 @@
-/* General Reset */
-body, h1, h2, h3, p, ul, li, a {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-}
-
-/* Body Styling */
+/* Fuente y estilo base */
 body {
-    background-color: #000;
-    color: #fff;
-    line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #0d0d0d;
+  color: #fff;
 }
 
-/* Header Styling */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #121212;
-    border-bottom: 2px solid #00ff00;
+/* Encabezado */
+header {
+  background-color: #000;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo img {
-    height: 50px;
+header ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
 }
 
-.nav-links {
-    display: flex;
-    gap: 20px;
+header ul li {
+  margin: 0 15px;
 }
 
-.nav-links a {
-    color: #00ff00;
-    font-weight: bold;
+header ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
 }
 
-.btn {
-    padding: 10px 20px;
-    background-color: #00ff00;
-    color: #000;
-    border-radius: 5px;
+header ul li a:hover {
+  color: #00ff7f;
 }
 
 /* Hero Section */
 .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px;
-    background: linear-gradient(90deg, #00ff00, #005500);
+  text-align: center;
+  background: linear-gradient(135deg, #006400, #00ff7f);
+  padding: 50px 20px;
+  border-bottom: 5px solid #00ff7f;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
+.hero img {
+  max-width: 150px;
+  margin-bottom: 20px;
 }
 
-.hero-content p {
-    margin: 20px 0;
-    font-size: 1.2rem;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-.hero-image img {
-    height: 300px;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
-/* About Section */
-.about {
-    padding: 40px;
-    text-align: center;
+.hero a {
+  display: inline-block;
+  background-color: #00ff7f;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.about h2 {
-    font-size: 2.5rem;
-    color: #00ff00;
+.hero a:hover {
+  background-color: #006400;
 }
 
-.about p {
-    max-width: 800px;
-    margin: auto;
+/* Secciones */
+section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-/* How to Buy Section */
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ff7f;
+}
+
+section p {
+  font-size: 1.2rem;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+/* How to Buy */
 .how-to-buy {
-    padding: 40px;
-    background-color: #121212;
-}
-
-.how-to-buy .buy-steps {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .how-to-buy .step {
-    background-color: #000;
-    padding: 20px;
-    border: 1px solid #00ff00;
-    border-radius: 10px;
-    flex: 1;
-    text-align: center;
+  background-color: #000;
+  border: 2px solid #00ff7f;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Tokenomics Section */
+.how-to-buy .step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 255, 127, 0.5);
+}
+
+.how-to-buy .step h3 {
+  font-size: 1.5rem;
+  color: #00ff7f;
+  margin-bottom: 10px;
+}
+
+.how-to-buy .step p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Tokenomics */
 .tokenomics {
-    padding: 40px;
-    text-align: center;
+  background: linear-gradient(135deg, #0d330d, #003300);
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.tokenomics .chart {
+  margin: 20px auto;
+  max-width: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
 }
 
 .tokenomics img {
-    margin-top: 20px;
-    max-width: 400px;
+  width: 100%;
 }
 
-/* Roadmap Section */
-.roadmap {
-    padding: 40px;
-    background-color: #121212;
-}
-
-.roadmap ul {
-    max-width: 800px;
-    margin: auto;
-    padding-left: 20px;
+.tokenomics .description {
+  background-color: rgba(0, 255, 127, 0.1);
+  border: 2px solid #00ff7f;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  color: #fff;
 }
 
 /* Footer */
-.footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #000;
+footer {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 5px solid #00ff7f;
 }
 
-.footer a {
-    color: #00
+footer a {
+  color: #00ff7f;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
