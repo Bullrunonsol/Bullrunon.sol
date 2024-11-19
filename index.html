@@ -1,79 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$BullRun</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="assets/images/logo.png" alt="$BullRun Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#how-to-buy">How to Buy</a></li>
-                <li><a href="#tokenomics">Tokenomics</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
-            </ul>
-        </nav>
-    </header>
+/* Navbar Styles */
+.navbar {
+  background-color: #1b1b1b; /* Fondo oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
 
-    <main>
-        <section id="hero" class="hero">
-            <h1>Welcome to $BullRun</h1>
-            <p>The memecoin leading the charge in the next crypto bull market.</p>
-            <div class="cta-buttons">
-                <a href="https://twitter.com" target="_blank">Twitter</a>
-                <a href="https://telegram.org" target="_blank">Telegram</a>
-                <a href="https://coinmarketcap.com" target="_blank">CoinMarketCap</a>
-            </div>
-        </section>
+.navbar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
 
-        <section id="about" class="about">
-            <h2>About</h2>
-            <p>$BullRun is a memecoin designed to empower the community and decentralize wealth.</p>
-        </section>
+.navbar-logo img {
+  height: 50px; /* Tamaño del logo */
+}
 
-        <section id="how-to-buy" class="how-to-buy">
-            <h2>How to Buy</h2>
-            <div class="steps">
-                <div class="step">
-                    <h3>Create a Wallet</h3>
-                    <p>Download Phantom or another Solana-compatible wallet.</p>
-                </div>
-                <div class="step">
-                    <h3>Get Some SOL</h3>
-                    <p>Fund your wallet with Solana (SOL).</p>
-                </div>
-                <div class="step">
-                    <h3>Go to DexCleaner</h3>
-                    <p>Search for $BullRun and swap SOL.</p>
-                </div>
-            </div>
-        </section>
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+}
 
-        <section id="tokenomics" class="tokenomics">
-            <h2>Tokenomics</h2>
-            <p>Total Supply: 1,000,000,000</p>
-        </section>
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
 
-        <section id="roadmap" class="roadmap">
-            <h2>Roadmap</h2>
-            <ul>
-                <li>Phase 1: Launch marketing campaigns.</li>
-                <li>Phase 2: Get listed on major exchanges.</li>
-                <li>Phase 3: Expand adoption globally.</li>
-            </ul>
-        </section>
-    </main>
+.nav-link:hover {
+  color: #50c878; /* Color verde al pasar el cursor */
+}
 
-    <footer>
-        <p>© 2024 $BullRun. All rights reserved.</p>
-        <p><a href="https://twitter.com" target="_blank">Twitter</a> | <a href="https://telegram.org" target="_blank">Telegram</a></p>
-    </footer>
-</body>
-</html>
+.navbar-buy-btn {
+  background-color: transparent;
+  border: 2px solid #50c878;
+  color: #50c878;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-buy-btn:hover {
+  background-color: #50c878;
+  color: #fff;
+}
 
