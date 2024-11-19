@@ -1,3 +1,245 @@
+/* Global Styles */
 body {
-    background-color: red !important;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #004d00, #007f00);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header a {
+    color: #ffffff;
+    margin: 0 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header a:hover {
+    color: #00ff00;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom, #007f00, #004d00);
+    padding: 80px 20px;
+    text-align: center;
+    color: #ffffff;
+    border-bottom: 4px solid #00ff00;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    background: #00ff00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero button:hover {
+    background: #004d00;
+    color: #fff;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    background: #1c1c1c;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+    color: #00ff00;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+section p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #cccccc;
+}
+
+/* How to Buy Section */
+#how-to-buy {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    min-width: 250px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 0, 0.4);
+}
+
+.card h3 {
+    color: #00ff00;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+/* Tokenomics Section */
+#tokenomics {
+    padding: 40px;
+    text-align: center;
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+#tokenomics h2 {
+    color: #00ff00;
+    margin-bottom: 20px;
+}
+
+#tokenomics .chart {
+    margin: 20px auto;
+    width: 300px;
+    height: 300px;
+    background: conic-gradient(
+        #00ff00 0% 30%,
+        #007f00 30% 70%,
+        #004d00 70% 100%
+    );
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Roadmap Section */
+#roadmap {
+    background: #1c1c1c;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#roadmap h2 {
+    color: #00ff00;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#roadmap ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#roadmap ul li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #cccccc;
+}
+
+#roadmap ul li span {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: #0d0d0d;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+footer a {
+    color: #00ff00;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    #how-to-buy {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
 }
