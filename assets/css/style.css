@@ -4,11 +4,13 @@ body {
   padding: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(120deg, #0b0e13, #141e30, #243b55);
-  animation: bg-move 20s infinite;
+  background-attachment: fixed;
+  animation: gradient-animation 10s infinite alternate;
+  overflow-x: hidden;
   color: #fff;
 }
 
-@keyframes bg-move {
+@keyframes gradient-animation {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
@@ -19,30 +21,33 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 15px 20px;
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 2px solid #29a745;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 
 .navbar ul li {
-  display: inline;
-  padding: 5px 10px;
-  transition: all 0.3s ease;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .navbar ul li:hover {
   background: #29a745;
-  border-radius: 5px;
-  cursor: pointer;
+  transform: scale(1.1);
+  color: #fff;
 }
 
 /* Hero Section */
@@ -50,53 +55,92 @@ body {
   height: 100vh;
   background: url('./01.webp') no-repeat center center/cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
   font-size: 4rem;
   color: #29a745;
-  animation: glow 2s infinite alternate;
+  animation: text-glow 2s infinite alternate;
 }
 
 .hero p {
   font-size: 1.5rem;
   color: #ddd;
+  margin-top: 20px;
 }
 
-@keyframes glow {
-  0% { text-shadow: 0 0 10px #29a745; }
-  100% { text-shadow: 0 0 20px #29a745; }
+@keyframes text-glow {
+  0% { text-shadow: 0 0 10px #29a745, 0 0 20px #29a745; }
+  100% { text-shadow: 0 0 20px #29a745, 0 0 40px #29a745; }
+}
+
+.hero .cta-btn {
+  margin-top: 30px;
+  padding: 15px 30px;
+  background: #29a745;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.hero .cta-btn:hover {
+  background: #fff;
+  color: #29a745;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 20px rgba(41, 167, 69, 0.4);
 }
 
 /* Tokenomics Section */
 .tokenomics {
   padding: 50px;
-  background: url('./file-glP3HMUyjdZrsprEucq2amRD.png') no-repeat center/cover;
-  color: #fff;
+  background: linear-gradient(120deg, #141e30, #243b55);
+  position: relative;
 }
 
 .tokenomics h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-.tokenomics .chart {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
+  font-size: 3rem;
+  margin-bottom: 40px;
   position: relative;
 }
 
-.tokenomics .chart .segment {
+.tokenomics h2::before {
+  content: "";
+  width: 100px;
+  height: 5px;
+  background: #29a745;
   position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+}
+
+.tokenomics .chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  width: 350px;
+  height: 350px;
+  animation: chart-zoom 3s infinite alternate;
+}
+
+.tokenomics .chart .segment {
   width: 100%;
   height: 100%;
   clip-path: circle(50% at 50% 50%);
-  animation: rotate 1.5s infinite linear;
+  animation: rotate 4s infinite linear;
 }
 
 @keyframes rotate {
@@ -104,30 +148,39 @@ body {
   100% { transform: rotate(360deg); }
 }
 
+@keyframes chart-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
 /* Roadmap Section */
 .roadmap {
   padding: 50px;
-  background: linear-gradient(120deg, #141e30, #243b55);
+  background: #1c1f26;
+  position: relative;
+  color: #fff;
 }
 
 .roadmap h2 {
   text-align: center;
-  font-size: 2.5rem;
-  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .roadmap .milestone {
   display: flex;
   justify-content: space-between;
-  margin: 30px 0;
+  align-items: center;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
+  margin: 20px 0;
+  background: rgba(0, 0, 0, 0.8);
   border-left: 5px solid #29a745;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .roadmap .milestone:hover {
-  transform: translateX(10px);
+  transform: translateX(20px);
   background: #29a745;
   color: #fff;
 }
@@ -136,42 +189,46 @@ body {
 .footer {
   background: #000;
   padding: 20px;
+  color: #fff;
   text-align: center;
+}
+
+.footer a {
+  color: #29a745;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
   color: #fff;
 }
 
-.footer p {
-  margin: 0;
-}
-
-/* Interactive Background Elements */
+/* Floating Coins Background */
 @keyframes floating {
   0% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
   100% { transform: translateY(0); }
 }
 
-.background-coins {
+.coin {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background: url('./file-mBEAEahZDYe6Zjepcl7GeMa5.png') no-repeat center/cover;
-  animation: floating 4s infinite;
-  left: 50%;
-  top: 50%;
+  width: 80px;
+  height: 80px;
+  background: url('./file-RZYhvO2rsHW6vLwBTUwLkXYx.png') no-repeat center center/cover;
+  animation: floating 5s infinite;
 }
 
-.background-coins:nth-child(2) {
+.coin:nth-child(2) {
   left: 30%;
   animation-delay: 1s;
 }
 
-.background-coins:nth-child(3) {
+.coin:nth-child(3) {
   left: 70%;
   animation-delay: 2s;
 }
 
-.background-coins:nth-child(4) {
+.coin:nth-child(4) {
   top: 70%;
-  left: 40%;
+  left: 50%;
 }
