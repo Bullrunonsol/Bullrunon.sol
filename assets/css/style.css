@@ -1,16 +1,14 @@
-/* Global Styles */
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     color: #fff;
-    background: linear-gradient(135deg, #000000, #003300, #000);
-    background-size: 400% 400%;
-    animation: background-animation 15s ease infinite;
+    background: linear-gradient(to bottom, #000000, #002200, #000);
+    animation: background-gradient 12s ease infinite;
     overflow-x: hidden;
 }
 
-/* Fondo de partículas */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -18,12 +16,12 @@ body {
     z-index: -1;
 }
 
-/* Navbar Fijo */
+/* Header Fijo */
 .sticky-header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.85);
     z-index: 999;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(8px);
@@ -114,12 +112,12 @@ nav ul li a:hover {
     transform: scale(1.2);
 }
 
-/* Tokenomics */
+/* Tokenomics Section */
 .tokenomics {
     padding: 150px 20px;
     text-align: center;
-    background: linear-gradient(to bottom, #000000, #001a00, #000);
-    animation: tokenomics-background 12s ease infinite;
+    background: radial-gradient(circle, #000000, #001a00, #000);
+    animation: tokenomics-background 14s ease infinite;
     color: #fff;
 }
 
@@ -162,7 +160,7 @@ nav ul li a:hover {
     box-shadow: 0px 8px 20px rgba(255, 215, 0, 0.7);
 }
 
-/* Roadmap */
+/* Roadmap Section */
 .roadmap {
     padding: 150px 20px;
     text-align: center;
@@ -200,25 +198,10 @@ nav ul li a:hover {
     box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.7);
 }
 
-/* Animaciones Personalizadas */
-@keyframes background-animation {
+/* Custom Animations */
+@keyframes background-gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-}
-
-@keyframes hero-gradient {
-    0%, 100% { background: rgba(0, 255, 0, 0.1); }
-    50% { background: rgba(0, 0, 0, 0.9); }
-}
-
-@keyframes tokenomics-background {
-    0%, 100% { background: linear-gradient(to bottom, #001a00, #000); }
-    50% { background: linear-gradient(to bottom, #003300, #000); }
-}
-
-@keyframes roadmap-background {
-    0%, 100% { background: rgba(0, 0, 0, 1); }
-    50% { background: rgba(0, 255, 0, 0.1); }
 }
 
