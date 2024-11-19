@@ -1,216 +1,86 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
+/* General Styles */
 body {
-  background-color: #111; /* Fondo oscuro */
-  color: #fff; /* Texto claro */
-  line-height: 1.6;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #121212;
 }
 
-/* Header Navigation */
-header {
-  background-color: #000; /* Fondo negro para el header */
-  padding: 1rem 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 10;
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000;
 }
 
-header ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
+nav .logo img {
+    height: 50px;
 }
 
-header ul li {
-  margin: 0 1rem;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
 }
 
-header ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s;
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
 }
 
-header ul li a:hover {
-  color: #0f0; /* Resaltado en verde */
+.buy-now {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #28a745;
+    border-radius: 5px;
 }
 
 /* Hero Section */
-.hero {
-  background: linear-gradient(to right, #004d00, #008000); /* Degradado verde */
-  text-align: center;
-  padding: 6rem 1rem 4rem;
-  margin-top: 4rem; /* Espaciado para evitar solapamiento con el header */
+#hero {
+    background: linear-gradient(180deg, #28a745, #121212);
+    text-align: center;
+    padding: 5rem 1rem;
 }
 
-.hero img {
-  max-width: 200px;
-  margin-bottom: 1rem;
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-.hero a {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background-color: #0f0;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 1rem;
-  transition: background-color 0.3s;
-}
-
-.hero a:hover {
-  background-color: #0a0; /* Hover más oscuro */
+#hero .btn {
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    color: #28a745;
+    border: 1px solid #28a745;
+    margin: 0.5rem;
+    text-decoration: none;
 }
 
 /* About Section */
 #about {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-#about h2 {
-  font-size: 2rem;
-  color: #0f0;
-  margin-bottom: 1rem;
-}
-
-#about p {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.1rem;
+    padding: 2rem 1rem;
+    background-color: #1b1b1b;
+    text-align: center;
 }
 
 /* How to Buy Section */
 #how-to-buy {
-  padding: 4rem 2rem;
-  background-color: #222;
+    padding: 2rem 1rem;
+    background-color: #121212;
 }
 
-#how-to-buy h2 {
-  font-size: 2rem;
-  text-align: center;
-  color: #0f0;
-  margin-bottom: 2rem;
+.buy-steps {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 
-.how-to-buy {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.step {
-  background-color: #333;
-  padding: 1.5rem;
-  border-radius: 10px;
-  text-align: center;
-  width: calc(50% - 1rem); /* 50% del contenedor con margen */
-  max-width: 300px;
-  transition: transform 0.3s;
-}
-
-.step:hover {
-  transform: translateY(-5px); /* Elevación al pasar el mouse */
-}
-
-.step h3 {
-  font-size: 1.4rem;
-  color: #0f0;
-  margin-bottom: 0.5rem;
-}
-
-.step p {
-  font-size: 1rem;
-}
-
-/* Tokenomics Section */
-#tokenomics {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-#tokenomics h2 {
-  font-size: 2rem;
-  color: #0f0;
-  margin-bottom: 1rem;
-}
-
-#tokenomics p {
-  margin-bottom: 1rem;
-}
-
-.tokenomics .chart img {
-  max-width: 300px;
-  margin-top: 1rem;
-  border: 2px solid #0f0;
-  border-radius: 10px;
-}
-
-/* Roadmap Section */
-#roadmap {
-  padding: 4rem 2rem;
-  background-color: #222;
-}
-
-#roadmap h2 {
-  font-size: 2rem;
-  text-align: center;
-  color: #0f0;
-  margin-bottom: 1.5rem;
-}
-
-#roadmap ul {
-  list-style: none;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-#roadmap ul li {
-  margin: 0.8rem 0;
-  font-size: 1rem;
-}
-
-#roadmap ul li strong {
-  color: #0f0;
-}
-
-/* Footer */
-footer {
-  background-color: #000;
-  text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 2rem;
-}
-
-footer p {
-  margin-bottom: 1rem;
-}
-
-footer a {
-  color: #0f0;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
+.buy-steps .step {
+    background: #1b1b1b;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 25%;
 }
