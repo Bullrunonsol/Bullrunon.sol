@@ -1,10 +1,12 @@
-/* Estilos Globales */
+/* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     color: #fff;
-    background: linear-gradient(to bottom, #000, #001a00);
+    background: linear-gradient(135deg, #001a00, #004d00, #000);
+    background-size: 300% 300%;
+    animation: background-dynamic 10s ease infinite;
     overflow-x: hidden;
 }
 
@@ -15,15 +17,16 @@ body {
     z-index: -1;
 }
 
-/* Header Fijo */
+/* Header (Navbar) */
 .sticky-header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.85);
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
+    transition: background-color 0.3s ease;
 }
 
 header {
@@ -65,8 +68,8 @@ nav ul li a:hover {
 .hero {
     text-align: center;
     padding: 200px 20px;
-    background: linear-gradient(to bottom, #00ff00, #000);
-    animation: gradient-hero 3s ease infinite;
+    background: linear-gradient(to bottom, rgba(0, 255, 0, 0.1), rgba(0, 0, 0, 0.9));
+    animation: gradient-hero 6s ease infinite;
 }
 
 .hero h1 {
@@ -75,6 +78,7 @@ nav ul li a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: text-fade 2s ease-in-out;
+    text-shadow: 0px 4px 8px rgba(0, 255, 0, 0.5);
 }
 
 .hero p {
@@ -97,6 +101,7 @@ nav ul li a:hover {
 .hero .cta:hover {
     background-color: #ffd700;
     transform: scale(1.2);
+    box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.7);
 }
 
 /* Tokenomics */
@@ -105,6 +110,7 @@ nav ul li a:hover {
     text-align: center;
     background: radial-gradient(circle, #001a00 0%, #000 100%);
     color: #fff;
+    animation: gradient-tokenomics 8s ease infinite;
 }
 
 .tokenomics h2 {
@@ -117,6 +123,9 @@ nav ul li a:hover {
 .tokenomics #chart {
     margin: 20px auto;
     max-width: 600px;
+    border: 3px solid #ffd700;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 255, 0, 0.5);
 }
 
 .tokenomics ul {
@@ -141,21 +150,58 @@ nav ul li a:hover {
     background: rgba(255, 215, 0, 0.2);
 }
 
-/* Blog */
-.blog {
-    padding: 100px 20px;
+/* Roadmap */
+.roadmap {
+    padding: 120px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #000, #003300, #000);
+    color: #fff;
+}
+
+.roadmap h2 {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 30px;
+    text-shadow: 0px 4px 8px rgba(255, 215, 0, 0.5);
+}
+
+.roadmap ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.roadmap li {
+    font-size: 1.3rem;
+    margin: 15px 0;
+    padding: 15px 25px;
+    border-left: 5px solid #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.roadmap li:hover {
+    transform: scale(1.05);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Devs Section */
+.devs {
+    padding: 120px 20px;
     text-align: center;
     background: #000;
     color: #fff;
 }
 
-.blog h2 {
+.devs h2 {
     font-size: 3rem;
     color: #ffd700;
     margin-bottom: 30px;
 }
 
-.blog-grid {
+.dev-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
@@ -163,114 +209,62 @@ nav ul li a:hover {
     margin: 0 auto;
 }
 
-.blog article {
+.dev-member {
     background: #222;
     padding: 20px;
     border: 2px solid #00ff00;
     border-radius: 10px;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.blog article:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 8px 15px rgba(0, 255, 0, 0.6);
-}
-
-.blog article img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-/* Preguntas Frecuentes */
-.faq {
-    padding: 100px 20px;
-    background: #111;
-    color: #fff;
-}
-
-.faq h2 {
-    font-size: 2.5rem;
-    color: #ffd700;
-    margin-bottom: 20px;
-}
-
-.faq-item {
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #00ff00;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-}
-
-.faq-item:hover {
-    transform: scale(1.05);
-    background: #222;
-}
-
-/* Footer */
-footer {
-    padding: 50px 20px;
-    background: #000;
-    text-align: center;
-    color: #fff;
-}
-
-footer form input,
-footer form textarea,
-footer form button {
-    width: 80%;
-    max-width: 400px;
-    margin: 10px 0;
-    padding: 15px;
-    font-size: 1.2rem;
-    border: 1px solid #00ff00;
-    border-radius: 8px;
-    background: #111;
-    color: #fff;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-footer form button:hover {
-    background: #00ff00;
-    color: #000;
+.dev-member:hover {
     transform: scale(1.1);
+    box-shadow: 0px 8px 20px rgba(0, 255, 0, 0.5);
+    border-color: #ffd700;
+}
+
+.dev-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #00ff00;
+    transition: border-color 0.3s ease;
+}
+
+.dev-member img:hover {
+    border-color: #ffd700;
 }
 
 /* Animations */
+@keyframes background-dynamic {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 @keyframes text-fade {
-    0%, 100% {
-        opacity: 0.8;
-    }
-    50% {
-        opacity: 1;
-    }
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
 }
 
 @keyframes gradient-hero {
-    0% {
-        background: linear-gradient(to bottom, #00ff00, #000);
-    }
-    50% {
-        background: linear-gradient(to bottom, #001a00, #000);
-    }
-    100% {
-        background: linear-gradient(to bottom, #00ff00, #000);
-    }
+    0% { background: rgba(0, 255, 0, 0.1); }
+    50% { background: rgba(0, 0, 0, 0.7); }
+    100% { background: rgba(0, 255, 0, 0.1); }
+}
+
+@keyframes gradient-tokenomics {
+    0% { background: radial-gradient(circle, #001a00, #000); }
+    50% { background: radial-gradient(circle, #002200, #000); }
+    100% { background: radial-gradient(circle, #001a00, #000); }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .blog article {
-        padding: 15px;
-    }
+    .hero h1 { font-size: 3rem; }
+    nav ul { flex-direction: column; gap: 15px; }
+    .dev-grid { grid-template-columns: 1fr; }
+    .roadmap ul { max-width: 100%; }
 }
