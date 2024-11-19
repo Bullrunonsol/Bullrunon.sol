@@ -1,245 +1,219 @@
-/* Global Styles */
-body {
-    font-family: 'Poppins', sans-serif;
+/* assets/css/style.css */
+
+/* General Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
     background-color: #121212;
     color: #ffffff;
     line-height: 1.6;
 }
 
-h1, h2, h3 {
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header */
 header {
-    background: linear-gradient(to right, #004d00, #007f00);
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: #000;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-header a {
+header .logo img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
     color: #ffffff;
-    margin: 0 15px;
-    font-size: 1rem;
+    text-decoration: none;
     font-weight: bold;
-    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
 }
 
-header a:hover {
+.nav-links li a:hover {
     color: #00ff00;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to bottom, #007f00, #004d00);
-    padding: 80px 20px;
     text-align: center;
+    background: linear-gradient(180deg, #00aa00, #005500);
+    padding: 100px 20px;
     color: #ffffff;
-    border-bottom: 4px solid #00ff00;
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-.hero button {
-    background: #00ff00;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2rem;
+.cta-buttons a {
+    display: inline-block;
+    background-color: #00ff00;
     color: #000;
+    padding: 10px 20px;
+    margin: 10px;
     border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
 }
 
-.hero button:hover {
-    background: #004d00;
-    color: #fff;
+.cta-buttons a:hover {
+    background-color: #ffffff;
+    color: #00aa00;
+    transform: scale(1.1);
 }
 
-/* Sections */
-section {
-    padding: 60px 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    background: #1c1c1c;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-section h2 {
-    color: #00ff00;
+/* About Section */
+.about {
+    padding: 50px 20px;
     text-align: center;
-    margin-bottom: 40px;
+    background-color: #1a1a1a;
+}
+
+.about h2 {
     font-size: 2rem;
-}
-
-section p {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #cccccc;
+    margin-bottom: 20px;
+    color: #00ff00;
 }
 
 /* How to Buy Section */
-#how-to-buy {
+.how-to-buy {
+    padding: 50px 20px;
+    background-color: #1a1a1a;
+}
+
+.how-to-buy h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00ff00;
+}
+
+.steps {
     display: flex;
     justify-content: space-around;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.card {
-    background: #1a1a1a;
+.step {
+    background-color: #333;
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     flex: 1;
-    max-width: 300px;
     min-width: 250px;
-    transition: all 0.3s ease;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 255, 0, 0.4);
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.card h3 {
+.step h3 {
     color: #00ff00;
     margin-bottom: 10px;
 }
 
-.card p {
-    font-size: 1rem;
-    color: #cccccc;
-}
-
 /* Tokenomics Section */
-#tokenomics {
-    padding: 40px;
+.tokenomics {
     text-align: center;
-    background: #1a1a1a;
-    border-radius: 10px;
+    padding: 50px 20px;
+    background-color: #1a1a1a;
 }
 
-#tokenomics h2 {
-    color: #00ff00;
+.tokenomics h2 {
+    font-size: 2rem;
     margin-bottom: 20px;
+    color: #00ff00;
 }
 
-#tokenomics .chart {
-    margin: 20px auto;
-    width: 300px;
-    height: 300px;
-    background: conic-gradient(
-        #00ff00 0% 30%,
-        #007f00 30% 70%,
-        #004d00 70% 100%
-    );
+.tokenomics p {
+    font-size: 1.2rem;
+}
+
+.tokenomics .chart {
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: conic-gradient(
+        #00ff00 0% 40%,
+        #ff0000 40% 70%,
+        #0000ff 70% 100%
+    );
+    margin: 0 auto;
 }
 
 /* Roadmap Section */
-#roadmap {
-    background: #1c1c1c;
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-#roadmap h2 {
-    color: #00ff00;
+.roadmap {
+    padding: 50px 20px;
     text-align: center;
-    margin-bottom: 20px;
+    background-color: #1a1a1a;
 }
 
-#roadmap ul {
+.roadmap h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00ff00;
+}
+
+.roadmap ul {
     list-style: none;
     padding: 0;
-    text-align: center;
+    margin: 0;
 }
 
-#roadmap ul li {
+.roadmap li {
     margin: 10px 0;
     font-size: 1.2rem;
-    color: #cccccc;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
 }
 
-#roadmap ul li span {
-    color: #00ff00;
-    font-weight: bold;
+.roadmap li:hover {
+    transform: translateX(10px);
 }
 
 /* Footer */
 footer {
-    background: #0d0d0d;
-    padding: 20px;
     text-align: center;
-    font-size: 0.9rem;
-    color: #666;
+    background-color: #000;
+    padding: 20px 10px;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #ffffff;
 }
 
 footer a {
     color: #00ff00;
     text-decoration: none;
-    margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    #how-to-buy {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        max-width: 100%;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    button {
-        font-size: 1rem;
-    }
+    color: #ffffff;
 }
