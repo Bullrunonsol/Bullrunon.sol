@@ -4,12 +4,13 @@ body {
     margin: 0;
     padding: 0;
     color: #fff;
-    background: linear-gradient(135deg, #001a00, #004d00, #000);
-    background-size: 300% 300%;
-    animation: background-dynamic 10s ease infinite;
+    background: linear-gradient(135deg, #000000, #003300, #000);
+    background-size: 400% 400%;
+    animation: background-animation 15s ease infinite;
     overflow-x: hidden;
 }
 
+/* Fondo de partículas */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -17,38 +18,44 @@ body {
     z-index: -1;
 }
 
-/* Header (Navbar) */
+/* Navbar Fijo */
 .sticky-header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 1000;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    transition: background-color 0.3s ease;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.sticky-header:hover {
+    background: rgba(0, 0, 0, 0.95);
+    border-bottom-color: rgba(255, 255, 255, 0.5);
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 15px 30px;
 }
 
 header .logo img {
-    max-height: 60px;
-    transition: transform 0.3s ease;
+    max-height: 50px;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 header .logo img:hover {
     transform: scale(1.1);
+    filter: drop-shadow(0px 4px 10px rgba(0, 255, 0, 0.8));
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
 nav ul li a {
@@ -56,35 +63,37 @@ nav ul li a {
     color: #00ff00;
     font-weight: bold;
     font-size: 1.2rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ffd700;
     transform: scale(1.1);
+    text-shadow: 0px 4px 8px rgba(255, 215, 0, 0.8);
+    color: #ffd700;
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 200px 20px;
+    padding: 250px 20px;
     background: linear-gradient(to bottom, rgba(0, 255, 0, 0.1), rgba(0, 0, 0, 0.9));
-    animation: gradient-hero 6s ease infinite;
+    animation: hero-gradient 10s ease infinite;
+    overflow: hidden;
 }
 
 .hero h1 {
-    font-size: 4.5rem;
+    font-size: 5rem;
     background: -webkit-linear-gradient(#00ff00, #ffd700);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: text-fade 2s ease-in-out;
-    text-shadow: 0px 4px 8px rgba(0, 255, 0, 0.5);
+    animation: text-fade 4s infinite alternate;
+    text-shadow: 0px 4px 20px rgba(0, 255, 0, 0.7);
 }
 
 .hero p {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 25px 0;
-    opacity: 0.9;
+    text-shadow: 0px 2px 5px rgba(255, 255, 255, 0.5);
 }
 
 .hero .cta {
@@ -95,37 +104,38 @@ nav ul li a:hover {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(0, 255, 0, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero .cta:hover {
     background-color: #ffd700;
+    box-shadow: 0px 8px 20px rgba(255, 215, 0, 0.7);
     transform: scale(1.2);
-    box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.7);
 }
 
 /* Tokenomics */
 .tokenomics {
-    padding: 120px 20px;
+    padding: 150px 20px;
     text-align: center;
-    background: radial-gradient(circle, #001a00 0%, #000 100%);
+    background: linear-gradient(to bottom, #000000, #001a00, #000);
+    animation: tokenomics-background 12s ease infinite;
     color: #fff;
-    animation: gradient-tokenomics 8s ease infinite;
 }
 
 .tokenomics h2 {
-    font-size: 3rem;
-    color: #ffd700;
+    font-size: 3.5rem;
     margin-bottom: 30px;
-    text-shadow: 0px 4px 6px rgba(255, 215, 0, 0.5);
+    color: #ffd700;
+    text-shadow: 0px 4px 10px rgba(255, 215, 0, 0.5);
 }
 
 .tokenomics #chart {
     margin: 20px auto;
-    max-width: 600px;
+    max-width: 650px;
     border: 3px solid #ffd700;
-    border-radius: 10px;
-    box-shadow: 0px 4px 20px rgba(0, 255, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0px 6px 30px rgba(0, 255, 0, 0.7);
 }
 
 .tokenomics ul {
@@ -137,134 +147,78 @@ nav ul li a:hover {
 }
 
 .tokenomics li {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     background: rgba(0, 255, 0, 0.2);
-    padding: 15px 25px;
-    border: 1px solid #00ff00;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+    padding: 20px 30px;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 255, 0, 0.5);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tokenomics li:hover {
-    transform: scale(1.15);
+    transform: scale(1.2);
     background: rgba(255, 215, 0, 0.2);
+    box-shadow: 0px 8px 20px rgba(255, 215, 0, 0.7);
 }
 
 /* Roadmap */
 .roadmap {
-    padding: 120px 20px;
+    padding: 150px 20px;
     text-align: center;
-    background: linear-gradient(to bottom, #000, #003300, #000);
-    color: #fff;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 255, 0, 0.1), rgba(0, 0, 0, 1));
+    animation: roadmap-background 14s ease infinite;
 }
 
 .roadmap h2 {
-    font-size: 2.5rem;
+    font-size: 3.2rem;
+    margin-bottom: 40px;
     color: #ffd700;
-    margin-bottom: 30px;
-    text-shadow: 0px 4px 8px rgba(255, 215, 0, 0.5);
+    text-shadow: 0px 4px 10px rgba(255, 215, 0, 0.5);
 }
 
 .roadmap ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
     max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
 }
 
 .roadmap li {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin: 15px 0;
-    padding: 15px 25px;
+    padding: 20px 30px;
     border-left: 5px solid #00ff00;
     background: rgba(0, 255, 0, 0.1);
     border-radius: 5px;
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .roadmap li:hover {
-    transform: scale(1.05);
-    background: rgba(255, 215, 0, 0.1);
-}
-
-/* Devs Section */
-.devs {
-    padding: 120px 20px;
-    text-align: center;
-    background: #000;
-    color: #fff;
-}
-
-.devs h2 {
-    font-size: 3rem;
-    color: #ffd700;
-    margin-bottom: 30px;
-}
-
-.dev-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.dev-member {
-    background: #222;
-    padding: 20px;
-    border: 2px solid #00ff00;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dev-member:hover {
     transform: scale(1.1);
-    box-shadow: 0px 8px 20px rgba(0, 255, 0, 0.5);
-    border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.2);
+    box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.7);
 }
 
-.dev-member img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    border: 3px solid #00ff00;
-    transition: border-color 0.3s ease;
-}
-
-.dev-member img:hover {
-    border-color: #ffd700;
-}
-
-/* Animations */
-@keyframes background-dynamic {
+/* Animaciones Personalizadas */
+@keyframes background-animation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-@keyframes text-fade {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 1; }
+@keyframes hero-gradient {
+    0%, 100% { background: rgba(0, 255, 0, 0.1); }
+    50% { background: rgba(0, 0, 0, 0.9); }
 }
 
-@keyframes gradient-hero {
-    0% { background: rgba(0, 255, 0, 0.1); }
-    50% { background: rgba(0, 0, 0, 0.7); }
-    100% { background: rgba(0, 255, 0, 0.1); }
+@keyframes tokenomics-background {
+    0%, 100% { background: linear-gradient(to bottom, #001a00, #000); }
+    50% { background: linear-gradient(to bottom, #003300, #000); }
 }
 
-@keyframes gradient-tokenomics {
-    0% { background: radial-gradient(circle, #001a00, #000); }
-    50% { background: radial-gradient(circle, #002200, #000); }
-    100% { background: radial-gradient(circle, #001a00, #000); }
+@keyframes roadmap-background {
+    0%, 100% { background: rgba(0, 0, 0, 1); }
+    50% { background: rgba(0, 255, 0, 0.1); }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 3rem; }
-    nav ul { flex-direction: column; gap: 15px; }
-    .dev-grid { grid-template-columns: 1fr; }
-    .roadmap ul { max-width: 100%; }
-}
