@@ -1,176 +1,76 @@
-/* Fuente y estilo base */
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background-color: #0d0d0d;
-  color: #fff;
-}
-
-/* Encabezado */
-header {
-  background-color: #000;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-header ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: flex-end;
-  margin: 0;
-}
-
-header ul li {
-  margin: 0 15px;
-}
-
-header ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-  transition: color 0.3s ease-in-out;
-}
-
-header ul li a:hover {
-  color: #00ff7f;
-}
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  background: linear-gradient(135deg, #006400, #00ff7f);
-  padding: 50px 20px;
-  border-bottom: 5px solid #00ff7f;
-}
-
-.hero img {
-  max-width: 150px;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.hero a {
-  display: inline-block;
-  background-color: #00ff7f;
-  color: #000;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.hero a:hover {
-  background-color: #006400;
-}
-
-/* Secciones */
-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #00ff7f;
-}
-
-section p {
-  font-size: 1.2rem;
-  margin: 20px auto;
-  max-width: 800px;
-}
-
-/* How to Buy */
-.how-to-buy {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.how-to-buy .step {
-  background-color: #000;
-  border: 2px solid #00ff7f;
-  border-radius: 10px;
-  padding: 20px;
-  width: 250px;
-  text-align: left;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.how-to-buy .step:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 255, 127, 0.5);
-}
-
-.how-to-buy .step h3 {
-  font-size: 1.5rem;
-  color: #00ff7f;
-  margin-bottom: 10px;
-}
-
-.how-to-buy .step p {
-  font-size: 1rem;
-  color: #ddd;
-}
-
-/* Tokenomics */
-.tokenomics {
-  background: linear-gradient(135deg, #0d330d, #003300);
-  padding: 60px 20px;
-  color: #fff;
-}
-
-.tokenomics .chart {
-  margin: 20px auto;
-  max-width: 300px;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
-}
-
-.tokenomics img {
-  width: 100%;
-}
-
-.tokenomics .description {
-  background-color: rgba(0, 255, 127, 0.1);
-  border: 2px solid #00ff7f;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 500px;
-  color: #fff;
-}
-
-/* Footer */
-footer {
-  background-color: #000;
-  padding: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 5px solid #00ff7f;
-}
-
-footer a {
-  color: #00ff7f;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SBullRun</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Asegúrate de que el archivo CSS esté en la misma carpeta que el HTML -->
+</head>
+<body>
+  <header>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#how-to-buy">How to Buy</a></li>
+      <li><a href="#tokenomics">Tokenomics</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+    </ul>
+  </header>
+  
+  <div class="hero">
+    <img src="logo.png" alt="SBullRun Logo">
+    <h1>Welcome to SBullRun</h1>
+    <p>The memecoin leading the charge in the next crypto bull market.</p>
+    <a href="#">Buy Now</a>
+  </div>
+  
+  <section id="about">
+    <h2>About</h2>
+    <p>SBullRun is the ultimate symbol of strength, resilience, and determination in the crypto market. Designed to empower the community and decentralize wealth, SBullRun is here to dominate the memecoin space.</p>
+  </section>
+  
+  <section id="how-to-buy">
+    <h2>How to Buy</h2>
+    <div class="how-to-buy">
+      <div class="step">
+        <h3>Create a Wallet</h3>
+        <p>Download Phantom or another Solana-compatible wallet from your app store or browser.</p>
+      </div>
+      <div class="step">
+        <h3>Get Some SOL</h3>
+        <p>Fund your wallet with Solana (SOL) to swap for SBullRun tokens.</p>
+      </div>
+      <div class="step">
+        <h3>Go to DexCleaner</h3>
+        <p>Connect your wallet to a decentralized exchange and search for SBullRun.</p>
+      </div>
+      <div class="step">
+        <h3>Swap SOL for SBullRun</h3>
+        <p>Complete the transaction to join the SBullRun revolution!</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="tokenomics" class="tokenomics">
+    <h2>Tokenomics</h2>
+    <p><strong>Total Supply:</strong> 1,000,000,000</p>
+    <p>No taxes. 100% of liquidity locked for community growth.</p>
+    <div class="chart">
+      <img src="chart.png" alt="Tokenomics Chart">
+    </div>
+  </section>
+  
+  <section id="roadmap">
+    <h2>Roadmap</h2>
+    <ul>
+      <li><strong>Phase 1:</strong> Launch marketing campaigns and establish community presence.</li>
+      <li><strong>Phase 2:</strong> Get SBullRun listed on major exchanges and grow partnerships.</li>
+      <li><strong>Phase 3:</strong> Expand adoption through utility integrations and global initiatives.</li>
+    </ul>
+  </section>
+  
+  <footer>
+    <p>© 2024 SBullRun. All rights reserved. <a href="#">Twitter</a> <a href="#">Telegram</a></p>
+  </footer>
+</body>
+</html>
