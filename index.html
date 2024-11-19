@@ -3,87 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>$BullRun</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="assets/images/logo.png" alt="$BullRun Logo">
+    <header class="main-header">
+        <div class="container">
+            <img src="assets/images/logo.png" alt="$BullRun Logo" class="logo">
+            <nav class="main-nav">
+                <a href="#about">About</a>
+                <a href="#how-to-buy">How to Buy</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#" class="cta-button">Buy Now</a>
+            </nav>
         </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#how-to-buy">How to Buy</a></li>
-                <li><a href="#tokenomics">Tokenomics</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
-            </ul>
-        </nav>
-        <a href="#buy-now" class="btn-buy-now">Buy Now</a>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
+        <div class="container">
             <h1>Welcome to $BullRun</h1>
             <p>The memecoin leading the charge in the next crypto bull market.</p>
-            <div class="social-links">
+            <div class="social-buttons">
                 <a href="#" class="btn">Twitter</a>
                 <a href="#" class="btn">Telegram</a>
                 <a href="#" class="btn">CoinMarketCap</a>
             </div>
-            <img src="assets/images/hero.png" alt="Hero Image">
+            <img src="assets/images/hero-image.png" alt="BullRun Hero" class="hero-image">
         </div>
     </section>
 
-    <section id="about" class="about">
-        <h2>About</h2>
-        <p>$BullRun is the ultimate symbol of strength, resilience, and determination in the crypto market. Designed to empower the community and decentralize wealth, $BullRun is here to dominate the memecoin space.</p>
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About</h2>
+            <p>
+                $BullRun is a memecoin designed to empower the community and decentralize wealth. 
+                With no presales, zero taxes, and 100% community ownership, $BullRun is here to dominate the crypto space.
+            </p>
+        </div>
     </section>
 
-    <section id="how-to-buy" class="how-to-buy">
-        <h2>How to Buy</h2>
-        <div class="steps">
-            <div class="step">
-                <h3>Create a Wallet</h3>
-                <p>Download Phantom or another Solana-compatible wallet from your app store or browser.</p>
-            </div>
-            <div class="step">
-                <h3>Get Some SOL</h3>
-                <p>Fund your wallet with Solana (SOL) to swap for $BullRun tokens.</p>
-            </div>
-            <div class="step">
-                <h3>Go to DexCleaner</h3>
-                <p>Connect your wallet to a decentralized exchange and search for $BullRun.</p>
-            </div>
-            <div class="step">
-                <h3>Swap SOL for $BullRun</h3>
-                <p>Complete the transaction to join the $BullRun revolution!</p>
+    <section id="how-to-buy" class="how-to-buy-section">
+        <div class="container">
+            <h2>How to Buy</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>Create a Wallet</h3>
+                    <p>Download a compatible wallet like Phantom.</p>
+                </div>
+                <div class="step">
+                    <h3>Get Some SOL</h3>
+                    <p>Fund your wallet with Solana (SOL).</p>
+                </div>
+                <div class="step">
+                    <h3>Go to Exchange</h3>
+                    <p>Search for $BullRun and swap SOL.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="tokenomics" class="tokenomics">
-        <h2>Tokenomics</h2>
-        <p><strong>Total Supply:</strong> 1,000,000,000</p>
-        <p>No taxes. 100% of liquidity locked for community growth.</p>
-        <img src="assets/images/tokenomics.png" alt="Tokenomics Chart">
-    </section>
-
-    <section id="roadmap" class="roadmap">
-        <h2>Roadmap</h2>
-        <ul>
-            <li><strong>Phase 1:</strong> Launch marketing campaigns and establish community presence.</li>
-            <li><strong>Phase 2:</strong> Get $BullRun listed on major exchanges and grow partnerships.</li>
-            <li><strong>Phase 3:</strong> Expand adoption through utility integrations and global initiatives.</li>
-        </ul>
-    </section>
-
-    <footer class="footer">
-        <div class="social-links">
-            <a href="#">Twitter</a>
-            <a href="#">Telegram</a>
+    <section id="tokenomics" class="tokenomics-section">
+        <div class="container">
+            <h2>Tokenomics</h2>
+            <p><strong>Total Supply:</strong> 1,000,000,000</p>
+            <p>100% of liquidity locked for community growth.</p>
+            <img src="assets/images/tokenomics-chart.png" alt="Tokenomics Chart">
         </div>
-        <p>© 2024 $BullRun. All rights reserved.</p>
+    </section>
+
+    <section id="roadmap" class="roadmap-section">
+        <div class="container">
+            <h2>Roadmap</h2>
+            <div class="phases">
+                <div class="phase">
+                    <h3>Phase 1</h3>
+                    <p>Launch marketing campaigns.</p>
+                </div>
+                <div class="phase">
+                    <h3>Phase 2</h3>
+                    <p>Get listed on major exchanges.</p>
+                </div>
+                <div class="phase">
+                    <h3>Phase 3</h3>
+                    <p>Expand adoption globally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2024 $BullRun. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">Telegram</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
