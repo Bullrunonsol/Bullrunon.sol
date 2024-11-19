@@ -1,120 +1,232 @@
-/* Estilos Generales */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(120deg, #141E30, #243B55);
-    background-size: 400% 400%;
-    animation: gradientShift 10s infinite;
-    color: white;
-    overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #121212, #1a1a1a);
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Fondo dinámico */
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0d0d0d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Logo */
-.logo-container {
-    text-align: center;
-    margin-top: 50px;
+.navbar .logo img {
+  height: 50px;
 }
 
-.logo {
-    width: 200px;
-    height: auto;
-    animation: pulse 3s infinite;
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
 }
 
-/* Lluvia de monedas */
-.coin-rain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
+.nav-links li a:hover {
+  color: #1db954;
 }
 
-.coin {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-image: url('ruta/a/moneda.png'); /* Cambiar por tu imagen */
-    background-size: contain;
-    background-repeat: no-repeat;
-    animation: fall 5s linear infinite, sway 2s ease-in-out infinite;
+.buy-now {
+  padding: 0.7rem 1.5rem;
+  background-color: transparent;
+  border: 2px solid #1db954;
+  border-radius: 5px;
+  color: #1db954;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
 }
 
-@keyframes fall {
-    0% { transform: translateY(-100px); }
-    100% { transform: translateY(110vh); }
+.buy-now:hover {
+  background-color: #1db954;
+  color: #0d0d0d;
 }
 
-@keyframes sway {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(20px); }
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-image: url('background_bullrun.png');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
 }
 
-/* Velas chinas */
-.candlestick-container {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    pointer-events: none;
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.candlestick {
-    position: relative;
-    width: 5px;
-    background-color: #00ff84;
-    animation: grow 2s infinite ease-in-out;
+.hero-content p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
-.candlestick::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    width: 1px;
-    height: 50px;
-    background-color: #00ff84;
+.social-icons img {
+  height: 40px;
+  margin-right: 1rem;
+  transition: transform 0.3s ease-in-out;
 }
 
-@keyframes grow {
-    0%, 100% { height: 50px; }
-    50% { height: 150px; }
+.social-icons img:hover {
+  transform: scale(1.2);
 }
 
-/* Texto Principal */
-.main-content {
-    text-align: center;
-    margin-top: 100px;
-    animation: fadeIn 2s ease-in-out;
+/* About Section */
+.about-section {
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: #1a1a1a;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+.about-image {
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
-.main-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #cfcfcf;
 }
 
-.main-content p {
-    font-size: 1.2rem;
+/* Buy Section */
+.buy-section {
+  background: linear-gradient(90deg, #1db954, #121212);
+  color: #ffffff;
+  padding: 4rem 2rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.step {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease-in-out;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  background: #252525;
+}
+
+.step h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #1db954;
+}
+
+/* Tokenomics Section */
+.tokenomics-section {
+  padding: 4rem 2rem;
+  background: #121212;
+  color: #ffffff;
+}
+
+.tokenomics-details {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tokenomics-graph {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.tokenomics-graph img {
+  max-width: 80%;
+  border-radius: 10px;
+}
+
+/* Roadmap Section */
+.roadmap-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, #121212, #1a1a1a);
+  color: #ffffff;
+}
+
+.roadmap-section ul {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.roadmap-section li {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #cfcfcf;
+}
+
+.roadmap-section li::before {
+  content: '✔';
+  color: #1db954;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Footer Section */
+footer {
+  padding: 2rem 1rem;
+  background: #0d0d0d;
+  color: #cfcfcf;
+  text-align: center;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.footer-icons img {
+  height: 30px;
+  margin: 0 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer-icons img:hover {
+  transform: scale(1.2);
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #cfcfcf;
+  margin-top: 1rem;
 }
