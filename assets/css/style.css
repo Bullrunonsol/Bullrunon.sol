@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -59,18 +58,4 @@ nav ul li a:hover {
 }
 .hero .cta:hover {
     background-color: #ffd700;
-}
-.tokenomics, .roadmap, .equipo {
-    padding: 50px 20px;
-    text-align: center;
-}
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-footer a {
-    color: #00ff00;
-    text-decoration: none;
-    margin: 0 10px;
 }
